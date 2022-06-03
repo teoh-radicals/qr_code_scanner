@@ -240,7 +240,8 @@ class QRView(
                         val code = mapOf(
                             "code" to result.text,
                             "type" to result.barcodeFormat.name,
-                            "rawBytes" to result.rawBytes
+                            "rawBytes" to result.rawBytes,
+                            "resultMetaData" to result.resultMetadata,
                         )
 
                         channel.invokeMethod(CHANNEL_METHOD_ON_RECOGNIZE_QR, code)
