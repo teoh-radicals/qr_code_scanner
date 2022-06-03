@@ -193,11 +193,15 @@ class _WebQrViewState extends State<WebQrView> {
       });
     }
 
-    final code = jsQR(imgData.data, canvas.width, canvas.height);
+    final code = jsQR(
+      imgData.data,
+      canvas.width,
+      canvas.height,
+    );
     // ignore: unnecessary_null_comparison
     if (code != null) {
-      _scanUpdateController
-          .add(Barcode(code.data, BarcodeFormat.qrcode, code.data.codeUnits));
+      _scanUpdateController.add(
+          Barcode(code.data, BarcodeFormat.qrcode, code.data.codeUnits, ''));
     }
   }
 
