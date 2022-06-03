@@ -241,7 +241,7 @@ class QRView(
                             "code" to result.text,
                             "type" to result.barcodeFormat.name,
                             "rawBytes" to result.rawBytes,
-                            "resultMetaData" to result.resultMetadata,
+                            "resultMetaData" to result.resultMetadata.UPC_EAN_EXTENSION,
                         )
 
                         channel.invokeMethod(CHANNEL_METHOD_ON_RECOGNIZE_QR, code)
